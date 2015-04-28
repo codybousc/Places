@@ -18,4 +18,8 @@ class Place
     define_singleton_method(:clear) do
         @@all = []
     end
+
+    define_method(:save) do
+        @@all.push(self)
+    end
 end
