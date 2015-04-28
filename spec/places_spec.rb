@@ -10,5 +10,10 @@ describe(Place) do
             expect(test_place.place_name()).to(eq("London"))
         end
     end
-    
+
+    describe(".add") do
+        it("list all places") do
+            expect(Task.all()).to(eq([]))
+        end
+    end
 end
