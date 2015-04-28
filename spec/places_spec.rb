@@ -14,7 +14,7 @@ describe(Place) do
         end
     end
 
-    describe(".add") do
+    describe(".all") do
         it("list all places") do
             expect(Place.all()).to(eq([]))
         end
@@ -24,7 +24,7 @@ describe(Place) do
         it("pushes a place into the array of places") do
             new_place = Place.new("tokyo")
             new_place.save()
-            expect(Place.all()).to(eq([]))
+            expect(Place.all()).to(eq([new_place]))
         end
     end
 
