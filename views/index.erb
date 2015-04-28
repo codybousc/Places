@@ -1,0 +1,19 @@
+<h1> Places </h1>
+
+<p> This is where you've been: </p>
+
+<ul>
+    <% @places.each() do |place| %>
+    <li><%= place.place_name() %></li>
+    <% end %>
+
+</ul>
+
+<p>Where have you been?</p>
+
+<form action = "/places" method="post">
+    <label for='place_name'>Location</label>
+    <input id='place_name' name='place_name' type='text'>
+
+    <button type='submit' class='btn-danger'>Add Place</button>
+</form>
