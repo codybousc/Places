@@ -3,6 +3,9 @@ require('places')
 require('pry')
 
 describe(Place) do
+    before() do
+        Place.clear
+    end
 
     describe("#place_name") do
         it ("lets you name a destination that you've been") do
@@ -13,7 +16,23 @@ describe(Place) do
 
     describe(".add") do
         it("list all places") do
-            expect(Task.all()).to(eq([]))
+            expect(Place.all()).to(eq([]))
+        end
+    end
+
+    describe('#save') do
+        it("pushes a place into the array of places") do
+            new_place = Place.new("tokyo")
+            new_place.save()
+            expect(Place.all()).to(eq([]))
+        end
+    end
+
+    describe(".clear") do
+        it("empties out all of the saved places") do
+            Place.new("London").save()
+            Place.clear()
+            expect(Place.all()).to(eq([]))
         end
     end
 end
